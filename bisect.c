@@ -30,17 +30,3 @@ float bisect(float (*f)(float), float e, int a, int b){
     
     return p;
 }
-
-//a1 = a
-//b1 = b
-//p0 = a
-//"#" 
-//p = (a1+b1)/2
-//if the acceptable relative error is satisfied, goto STOP
-//if f(p1)*f(a1) > 0, continue, otherwise go to "$"
-//a = p1, b = b
-//goto "#"
-//"$"
-//a = a, b = p1
-//goto "#"
-//STOP
