@@ -1,0 +1,7 @@
+A small library of mathematical tools written in various languages. 
+
+List of existing files:
+
+Numerical Analysis
+- bisect.c
+    - C implementation of the Bisection Method for finding the root of a polynomial.
