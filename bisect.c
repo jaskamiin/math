@@ -21,12 +21,26 @@ float bisect(float (*f)(float), float e, int a, int b){
     if (flag == 0) return 0;
     
     //begin bisection method
-    float a1 = (float)a, b2 = (float)b, pM1 = (float)a, p = (a+b)/2;
+    float a1 = a, b2 = b, pM1 = a, p = (a1+b1)/2;
     while (abs( p - pM1 ) < e){
-        f(p)*f(a) > 0 ? a = p : b = p;
+        f(p)*f(a1) > 0 ? a1 = p : b1 = p;
         pM1 = p;
-        p = (a+b)/2;
+        p = (a1+b)/2;
     }
     
     return p;
 }
+
+//a1 = a
+//b1 = b
+//p0 = a
+//"#" 
+//p = (a1+b1)/2
+//if the acceptable relative error is satisfied, goto STOP
+//if f(p1)*f(a1) > 0, continue, otherwise go to "$"
+//a = p1, b = b
+//goto "#"
+//"$"
+//a = a, b = p1
+//goto "#"
+//STOP
