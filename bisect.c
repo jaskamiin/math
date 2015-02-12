@@ -12,12 +12,14 @@ float f(float x){
 //f - function to evaluate
 //e - error tolerance
 //[a,b] - interval in which to find root (assuming a, b in Z)
-float bisect(float (*f)(float), float e, int a, int b){  
+float bisect(float (*f)(float), float e, int a, int b){
+  
     //use intermediate value theorem to check 
     //if a root exists in interval [a,b]
     short flag;
     a >= 0 ? (b >= 0 ? flag = 0 : flag = 1 ) : (b < 0 ? flag = 0 : flag = 1 );
     if (flag == 0) return 0;
+    
     //begin bisection method
     float a1 = (float)a, b2 = (float)b, pM1 = (float)a, p = (a+b)/2;
     while (abs( p - pM1 ) < e){
@@ -25,5 +27,6 @@ float bisect(float (*f)(float), float e, int a, int b){
         pM1 = p;
         p = (a+b)/2;
     }
+    
     return p;
 }
