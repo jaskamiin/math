@@ -10,9 +10,7 @@
 float bisect(float (*f)(float), float e, int a, int b){
     //use intermediate value theorem to check 
     //if a root exists in interval [a,b]
-    short flag;
-    a >= 0 ? (b >= 0 ? flag = 0 : flag = 1 ) : (b < 0 ? flag = 0 : flag = 1 );
-    if (flag == 0) return 0;
+    a*b >= 0 ? return 0 : continue;
     
     //begin bisection method
     float a1 = a, b2 = b, pM1 = a, p = (a1+b1)/2;
