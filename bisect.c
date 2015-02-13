@@ -7,6 +7,7 @@
 */
 
 #define abs(x) x >= 0 ? x : -x
+
 float bisect(float (*f)(float), float e, int a, int b){
     //use intermediate value theorem to check 
     //if a root exists in interval [a,b]
@@ -23,9 +24,9 @@ float bisect(float (*f)(float), float e, int a, int b){
     return p;
 }
 
-//-------------------------------------------------/
+/*/-------------------------------------------------/
 //example of a test function ---  x^3 + x^2 + x + 1
 float f(float x){
     return (x*x*x)+(x*x)+ x + 1;
 }
-//-------------------------------------------------/
+//-------------------------------------------------*/
