@@ -1,8 +1,16 @@
 A small library of mathematical tools written in various languages. 
 
-List of existing files by topic:
+#List of existing files by topic:
 
-Numerical Analysis
+##Numerical Analysis
+
 - bisect.c
     - C implementation of the Bisection Method for finding the root of a polynomial.
-    - TODO : doesn't handle negative roots yet.
+    - TODO : doesn't seem to handle negative roots yet.
+    
+- bisect_test.c
+    - Tests accuracy and also benchmarks the bisect() method from bisect.c. 
+    - RESULTS: 
+        - Tested with (f(x) = x^3 - x^2 - x - 2), e = 10^-6, on interval [1,3]
+        - Converged to 2.000015 (real valued root is 2) in 0.00000185566 seconds 
+        
