@@ -3,7 +3,7 @@
 
 typedef float (*func)(float);
 
-//test function: x^5 + 7x^4 - 8x^3 + x^2 - 2
+//test function: x^3 - x^2 - x - 2
 float test(float x){
 	return (x*x*x) - (x*x) - x - 2;
 }
@@ -23,7 +23,7 @@ float bisect(float(*f)(float), float e, float a, float b){
 	return c;
 }
 
-//test method with function f(x), e = 10^-4, on [1,2]
+//test method with function f(x), e = 10^-6, on [1,2]
 int main(){
 	func f = &test;
 	double start, end, ans;
