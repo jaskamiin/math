@@ -1,32 +1,31 @@
-﻿/*
-    C language implementation of Bisection method for root-finding
-    
-    f - function to evaluate
-    e - error tolerance
-    [a,b] - interval in which to find root (assuming a, b in Z)
-*/
+﻿#include <stdio.h>
 
-#define abs(x) x >= 0 ? x : -x
+typedef float (*func)(float);
 
-float bisect(float (*f)(float), float e, int a, int b){
-    //use intermediate value theorem to check 
-    //if a root exists in interval [a,b]
-    if(a*b >= 0) {return 0;}
-    
-    //begin bisection method
-    float a1 = a, b2 = b, pM1 = a, p = (a1+b1)/2;
-    while (abs( p - pM1 ) < e){
-        f(p)*f(a1) > 0 ? a1 = p : b1 = p;
-        pM1 = p;
-        p = (a1+b)/2;
-    }
-    
-    return p;
+//test function: x^5 + 7x^4 - 8x^3 + x^2 - 2
+float test(float x){
+	return (x*x*x*x*x) + (7*x*x*x*x) - (8*x*x*x) + (x*x) - 2;
 }
 
-/*/-------------------------------------------------/
-//example of a test function ---  x^3 + x^2 + x + 1
-float f(float x){
-    return (x*x*x)+(x*x)+ x + 1;
+//function to perform bisection method
+float bisect(float(*f)(float), float e, float a, float b){
+	//use intermediate value theorem to check 
+	//if a root exists in interval [a,b]
+	if (f(a)*f(b) > 0) { printf("Invalid interval - returning\n");  return 0; }
+
+	float c;
+	while (1){
+		c = (a + b) / 2;
+		if ((b-c)/c<=e) break;
+		f(b)*f(c) <= 0 ? a = c : b = c;
+	}
+	return c;
 }
-//-------------------------------------------------*/
+
+//test method with function f(x), e = 10^-4, on [1,2]
+int main(){
+	func f = &test;
+	printf("The root is %f", bisect(f, .001f, 0, 2));
+	getchar();
+	return 0;
+}
