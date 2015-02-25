@@ -2,6 +2,9 @@ A small library of mathematical tools written in various languages.
 
 # List of existing files by topic:
 
+- **benchmark.h**
+    - C header file containing definitions of a get_time() function used for testing performance
+
 ## Numerical Analysis
 
 - **bisect.c**
