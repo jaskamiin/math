@@ -1,7 +1,7 @@
 ﻿#include <stdio.h>
 #include <time.h>
-#include <benchmark.h>
 #include <float.h>
+#include <benchmark.h>
 
 typedef double (*func)(double);
 
@@ -38,6 +38,7 @@ int main(){
 	end = get_time();
 
 	printf("The root is %.*g and took %e seconds", DECIMAL_DIG*2, ans, end-start);
-	getchar();
+	
+    getchar();
 	return 0;
 }
