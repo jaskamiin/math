@@ -28,7 +28,7 @@ double bisect(double(*f)(double), double eps, double a, double b){
 	return c;
 }
 
-//test method with function f(x), e = 10^-6, on [1,2]
+//test method with function f(x), eps = 10^-20, on [1,2]
 int main(){
 	func f = &test;
 	double start, end, ans;
