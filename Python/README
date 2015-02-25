@@ -1,0 +1,6 @@
+﻿numan.py
+    - module for implementations of numerical methods
+    - rootfinding
+        - bisection method  --- bisect()
+        - secant method     --- secant()
+    - numerical differentiation --- ndiff()
