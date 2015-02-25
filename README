@@ -4,11 +4,11 @@ A small library of mathematical tools written in various languages.
 
 ## Numerical Analysis
 
-- bisect.c
+- **bisect.c**
     - C implementation of the Bisection Method for finding the root of a polynomial.
     - TODO : doesn't seem to handle negative roots yet.
     
-- bisect_test.c
+- **bisect_test.c**
     - Tests accuracy and also benchmarks the bisect() method from bisect.c. 
     - RESULTS: 
         - Tested with (f(x) = x^3 - x^2 - x - 2), e = 10^-6, on interval [1,3]
