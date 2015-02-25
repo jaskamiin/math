@@ -1,7 +1,7 @@
 ﻿#include <stdio.h>
 #include <time.h>
 #include <float.h>
-#include <benchmark.h>
+#include "benchmark.h"
 
 typedef double (*func)(double);
 
