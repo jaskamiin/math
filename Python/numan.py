@@ -21,10 +21,8 @@ def bisect(f, a, b, eps):
         return "Error tolerance must be greater than zero"
     if f(a)*f(b) > 0:
         return "Invalid interval"
-
     a = float(a)
     b = float(b)
-
     while True:
         c = (a + b) / 2
         if (b - c)/2 <= eps:
@@ -33,7 +31,6 @@ def bisect(f, a, b, eps):
             a = c
         else:
             b = c
-
     return c
    
 
