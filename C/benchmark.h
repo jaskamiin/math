@@ -3,7 +3,7 @@
     #ifdef WIN32
         #include <windows.h>
 
-        static double get_time()
+        static double get_time(void)
         {
             LARGE_INTEGER t, f;
             QueryPerformanceCounter(&t);
@@ -15,7 +15,7 @@
         #include <sys/time.h>
         #include <sys/resource.h>
 
-        static double get_time()
+        static double get_time(void)
         {
             struct timeval t;
             struct timezone tzp;
