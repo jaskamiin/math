@@ -5,12 +5,24 @@ A small library of mathematical tools written in various languages.
 ## Numerical Analysis
 
 - **bisect.c**
-    - C implementation of the Bisection Method for finding the root of a polynomial.
+    - C implementation of the Bisection Method for finding root(s) of a polynomial.
     - TODO : doesn't seem to handle negative roots yet.
+
+- **secm.c**
+    - C implementation of the Secant Method for finding root(s) of a polynomial.
+    - MUCH faster and more precise than bisect()
     
 - **bisect_test.c**
-    - Tests accuracy and also benchmarks the bisect() method from bisect.c. 
-    - RESULTS: 
-        - Tested with (f(x) = x^3 - x^2 - x - 2), e = 10^-6, on interval [1,3]
-        - Converged to 2.000015 (real valued root is 2) in 0.00000185566 seconds 
+    - Tests accuracy and also benchmarks the bisect() and secm() functions.
+    - Tested with f(x) = x^3 - x^2 - x - 1), on interval [1,2]
+        - real root ---  1.8392867552141611
+    - RESULTS (bisect()): 
+        - Root found --- 1.8392867552141627
+        - Error --- 0.0000000000000016
+        - (RUNTIME): 4.330068 microseconds
+    - RESULTS (secm()):
+        - Root found --- 1.8392867552141612
+        - Error --- 0.0000000000000001
+        - (RUNTIME): 1.85566 microseconds
+    
         
