@@ -9,6 +9,7 @@ static inline double diff(double(*f)(double), double x0){
 	return (y2 - y1) / (x2 - x1);
 }
 
+//newton method implementation
 double newton_method(double(*f)(double), double a){
 	for (int i = 0; i < 1000; i++){
         double dA = diff(f, a), fA = f(a);
