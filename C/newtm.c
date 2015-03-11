@@ -11,8 +11,9 @@ static inline double diff(double(*f)(double), double x0){
 
 double newton_method(double(*f)(double), double a){
 	for (int i = 0; i < 1000; i++){
-		if (f(a) == diff(f, a)) break;
-		if (fabs(f(a) - diff(f, a)) <= 0.00005f) break;
-		a = a - f(a) / diff(f, a);
+        double dA = diff(f, a), fA = f(a);
+		if (fA == dA) break; 
+        if (fabs(fA - dA) <= 0.00005f) break;
+		a = a - fA / dA;
 	}
 }
